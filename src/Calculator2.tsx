@@ -60,6 +60,9 @@ function Calculator() {
 
   return (
     <div className=" flex justify-center items-center h-svh">
+      <h1 className="md:top-12 text-2xl absolute top-32 font-mono p-1">
+        Una operacion a la vez
+      </h1>
       <select
         name=""
         id=""
