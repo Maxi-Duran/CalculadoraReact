@@ -59,157 +59,159 @@ function Calculator() {
   };
 
   return (
-    <div className=" flex justify-center items-center h-svh">
-      <h1 className="md:top-12 text-2xl absolute top-32 font-mono p-1">
-        Una operacion a la vez
-      </h1>
-      <select
-        name=""
-        id=""
-        className="md:top-24 absolute top-24 font-mono p-1 "
-        onChange={onHandleChange}
-      >
-        <option value="" selected disabled hidden>
-          Eliga Color
-        </option>
-        <option value="bg-emerald-400">Esmeralda</option>
-        <option value="bg-purple-400">Purpura</option>
-        <option value="bg-red-400">Rojo</option>
-        <option value="bg-blue-400">Azul</option>
-        <option value="bg-yellow-400">Amarillo</option>
-        <option value="bg-orange-500">Naranja</option>
-      </select>
-      <div
-        className={`m-auto sm:w-[450px] ${color}  h-auto w-[320px]  rounded-xl `}
-      >
-        <div className="    h-8 flex justify-end text-4xl font-sans items-center opacity-40   ">
-          {previusValue}
-          {operator}
+    <div className="  flex justify-center items-center h-svh">
+      <div className="text-center">
+        <div className="mb-4">
+          <select
+            name=""
+            id=""
+            className="font-mono p-1   "
+            onChange={onHandleChange}
+          >
+            <option value="" selected disabled hidden>
+              Eliga Color
+            </option>
+            <option value="bg-emerald-400">Esmeralda</option>
+            <option value="bg-purple-400">Purpura</option>
+            <option value="bg-red-400">Rojo</option>
+            <option value="bg-blue-400">Azul</option>
+            <option value="bg-yellow-400">Amarillo</option>
+            <option value="bg-orange-500">Naranja</option>
+          </select>
         </div>
-        <div className="    h-24 flex justify-end text-4xl font-sans items-center    ">
-          {number || "0" || result}
-        </div>
-        <div className="flex       ">
-          <div className="flex flex-wrap p-2  justify-center gap-3 ">
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl "
-              onClick={() => onHandleClickOperator("%")}
-            >
-              %
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => setNumber(number.slice(0, -1))}
-            >
-              CE
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => Clear()}
-            >
-              C
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("9")}
-            >
-              7
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("8")}
-            >
-              8
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("7")}
-            >
-              9
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("4")}
-            >
-              4
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("5")}
-            >
-              5
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("6")}
-            >
-              6
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("1")}
-            >
-              1
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("2")}
-            >
-              2
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("3")}
-            >
-              3
-            </button>
-            <button className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl">
-              #
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber("0")}
-            >
-              0
-            </button>
-            <button
-              className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
-              onClick={() => onHandleClickNumber(".")}
-            >
-              .
-            </button>
+
+        <div
+          className={`m-auto sm:w-[450px]  ${color}  h-auto w-[320px]  rounded-xl `}
+        >
+          <div className="    h-8 flex justify-end text-4xl font-sans items-center opacity-40   ">
+            {previusValue}
+            {operator}
           </div>
-          <div className=" flex flex-col    justify-center gap-3 p-2   ">
-            <button
-              className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24  "
-              onClick={() => onHandleClickOperator("+")}
-            >
-              +
-            </button>
-            <button
-              className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
-              onClick={() => onHandleClickOperator("-")}
-            >
-              -
-            </button>
-            <button
-              className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
-              onClick={() => onHandleClickOperator("*")}
-            >
-              *
-            </button>
-            <button
-              className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
-              onClick={() => onHandleClickOperator("/")}
-            >
-              /
-            </button>
-            <button
-              className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
-              onClick={calculateResult}
-            >
-              =
-            </button>
+          <div className="    h-24 flex justify-end text-4xl font-sans items-center    ">
+            {number || "0" || result}
+          </div>
+          <div className="flex       ">
+            <div className="flex flex-wrap p-2  justify-center gap-3 ">
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl "
+                onClick={() => onHandleClickOperator("%")}
+              >
+                %
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => setNumber(number.slice(0, -1))}
+              >
+                CE
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => Clear()}
+              >
+                C
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("9")}
+              >
+                7
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("8")}
+              >
+                8
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("7")}
+              >
+                9
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("4")}
+              >
+                4
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("5")}
+              >
+                5
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("6")}
+              >
+                6
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("1")}
+              >
+                1
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("2")}
+              >
+                2
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("3")}
+              >
+                3
+              </button>
+              <button className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl">
+                #
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber("0")}
+              >
+                0
+              </button>
+              <button
+                className="sm:w-24 bg-gray-200 rounded-2xl w-16 h-20 text-3xl"
+                onClick={() => onHandleClickNumber(".")}
+              >
+                .
+              </button>
+            </div>
+            <div className=" flex flex-col    justify-center gap-3 p-2   ">
+              <button
+                className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24  "
+                onClick={() => onHandleClickOperator("+")}
+              >
+                +
+              </button>
+              <button
+                className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
+                onClick={() => onHandleClickOperator("-")}
+              >
+                -
+              </button>
+              <button
+                className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
+                onClick={() => onHandleClickOperator("*")}
+              >
+                *
+              </button>
+              <button
+                className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
+                onClick={() => onHandleClickOperator("/")}
+              >
+                /
+              </button>
+              <button
+                className="bg-red-500 rounded-2xl w-16 h-20 text-4xl sm:w-24    "
+                onClick={calculateResult}
+              >
+                =
+              </button>
+            </div>
           </div>
         </div>
       </div>
